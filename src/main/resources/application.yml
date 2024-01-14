@@ -1,0 +1,22 @@
+server:
+  port: 8081
+error:
+include-message: always
+#Configuracion de spring
+spring:
+  #Configuracion de migracion
+  flyway:
+    enabled: true
+    baselineVersion: 1
+    locations:
+      classpath: db/migration
+    sqlMigrationSuffixes: .sql
+    baselineOnMigrate: true
+    sqlMigrationPrefix: V
+    schemas: public
+
+  datasource:
+    url: jdbc:postgresql://heffalump.db.elephantsql.com:5432/oymsyvqr?socketTimeout=3
+    username: oymsyvqr
+    password: rr6Uyj1W7NJNFCu60m8jmXw_AF71Uy-_
+    driverClassName: org.postgresql.Driver
